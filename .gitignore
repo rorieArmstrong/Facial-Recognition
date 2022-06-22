@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Images
+my-image.png
+training-images/rorie-armstrong

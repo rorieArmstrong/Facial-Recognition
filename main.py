@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 
 face_cascade = cv2.CascadeClassifier('./frontalface_alt2.xml')
+recogniser = cv2.face.LBPHFaceRecognizer_create()
 
 cap = cv2.VideoCapture(0)
 
@@ -13,12 +14,17 @@ while(True):
         print(x,y,w,h)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = frame[y:y+h, x:x+w]
+
+        #FACE IDENTIFICATION
+        
+
+        #SAVE FACE AS PNG
         img_item = "my-image.png"
         cv2.imwrite(img_item, roi_gray)
 
-        color = (255,0,0)
+        #DRAW RECT AROUND FACES
+        color = (0,255,255)
         stroke = 2
-
         cv2.rectangle(frame, (x,y),(x+w,y+h),color,stroke)
 
     cv2.imshow('frame',frame)
