@@ -19,7 +19,7 @@ while(True):
         color = (255,0,0)
         stroke = 2
 
-        cv2.rectangle(frame, (x,y),(x+w,y+h))
+        cv2.rectangle(frame, (x,y),(x+w,y+h),color,stroke)
 
     cv2.imshow('frame',frame)
     if cv2.waitKey(20) & 0xFF == ord('q'):
