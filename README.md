@@ -2,7 +2,7 @@
 Building a facial recognition app with python
 
 Packages used:
-OpenCV
-numpy
-pickle
+OpenCV,
+numpy,
+pickle,
 PIL
