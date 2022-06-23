@@ -30,7 +30,7 @@ while(True):
 
         #FACE IDENTIFICATION
         id_, conf = recogniser.predict(gray)
-        if conf>= 45:
+        if conf>= 80:
             print(labels[id_])
             font = cv2.FONT_HERSHEY_SIMPLEX
             name = labels[id_]
