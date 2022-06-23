@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 from  PIL import Image
 
-face_cascade = cv2.CascadeClassifier('./frontalface_alt2.xml')
+face_cascade = cv2.CascadeClassifier('./data/frontalface_alt2.xml')
 recogniser = cv2.face.LBPHFaceRecognizer_create()
 
 current_id = 0
@@ -24,6 +24,8 @@ for root, dirs, files in os.walk('./training-images'):
             id = label_ids[label]
 
             pil_img = Image.open(path).convert("L")
+            size = (550,550)
+            final_img = pil_img.resize(size)
             img_array = np.array(pil_img, "uint8")
 
             faces = face_cascade.detectMultiScale(img_array, scaleFactor=1.5, minNeighbors=5)
